@@ -1,131 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Instagram</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        header {
-            background-color: #405de6;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-
-        #post-form {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 3px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .post {
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .post img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 3px;
-        }
+        /* Estilos CSS aqui, conforme necessário */
     </style>
+    <title>Sua Loja</title>
 </head>
 <body>
     <header>
-        <h1>Mini Instagram</h1>
+        <h1>Sua Loja Online</h1>
     </header>
-
     <main>
-        <div id="post-form">
-            <h2>Nova Postagem</h2>
-            <form id="add-post-form">
-                <label for="image-url">URL da Imagem:</label>
-                <input type="url" id="image-url" name="image-url" required>
+        <section class="product" id="product1">
+            <img src="product1.jpg" alt="Product 1">
+            <h2>Produto 1</h2>
+            <p>Descrição do Produto 1.</p>
+            <p class="price">R$ 50,00</p>
+            <button onclick="addToCart('Produto 1', 50.00)">Add to Cart</button>
+        </section>
 
-                <label for="caption">Legenda:</label>
-                <textarea id="caption" name="caption" rows="4" required></textarea>
+        <section class="product" id="product2">
+            <img src="product2.jpg" alt="Product 2">
+            <h2>Produto 2</h2>
+            <p>Descrição do Produto 2.</p>
+            <p class="price">R$ 75,00</p>
+            <button onclick="addToCart('Produto 2', 75.00)">Add to Cart</button>
+        </section>
 
-                <button type="button" onclick="addPost()">Adicionar Postagem</button>
-            </form>
-        </div>
+        <!-- Adicione mais produtos conforme necessário -->
 
-        <div id="posts">
-            <!-- Postagens serão exibidas aqui -->
-        </div>
     </main>
+    <aside id="cart">
+        <h2>Carrinho de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="cart-total">R$ 0,00</span></p>
+    </aside>
+    <footer>
+        <p>&copy; 2024 Sua Loja Online. Todos os direitos reservados.</p>
+    </footer>
 
     <script>
-        function addPost() {
-            const form = document.getElementById('add-post-form');
-            const imageUrl = form.elements['image-url'].value;
-            const caption = form.elements['caption'].value;
+        let cartItems = [];
+        let cartTotal = 0;
 
-            if (imageUrl && caption) {
-                const postsContainer = document.getElementById('posts');
+        function addToCart(productName, productPrice) {
+            cartItems.push({ name: productName, price: productPrice });
+            cartTotal += productPrice;
 
-                const postDiv = document.createElement('div');
-                postDiv.classList.add('post');
+            updateCart();
+        }
 
-                const img = document.createElement('img');
-                img.src = imageUrl;
+        function updateCart() {
+            const cartItemsElement = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
 
-                const captionParagraph = document.createElement('p');
-                captionParagraph.textContent = caption;
+            // Limpa a lista de itens do carrinho
+            cartItemsElement.innerHTML = '';
 
-                postDiv.appendChild(img);
-                postDiv.appendChild(captionParagraph);
+            // Adiciona os itens ao carrinho
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
+                cartItemsElement.appendChild(listItem);
+            });
 
-                postsContainer.appendChild(postDiv);
-
-                // Limpar o formulário após adicionar a postagem
-                form.reset();
-            }
+            // Atualiza o total do carrinho
+            cartTotalElement.textContent = `R$ ${cartTotal.toFixed(2)}`;
         }
     </script>
 </body>
 </html>
-
