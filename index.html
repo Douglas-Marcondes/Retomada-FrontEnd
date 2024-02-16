@@ -3,197 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Site Profissional</title>
+    <title>CachorroMania</title>
     <link rel="icon" href="caminho-para-o-seu-icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 2em;
-        }
-
-        nav {
-            background-color: #007bff;
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav li {
-            margin-right: 20px;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px 0;
-            background-color: #fff;
-            border-radius: 8px;
-        }
-
-        h2 {
-            color: #007bff;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-        }
-
-        form {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin: 10px 0;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        @media only screen and (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-            }
-
-            nav li {
-                display: block;
-                margin: 10px 0;
-            }
-
-            nav.active ul {
-                display: flex;
-                justify-content: center;
-            }
-        }
+        /* Seus estilos CSS aqui */
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Seu Nome</h1>
-        <p>Desenvolvedor Web</p>
+        <h1>CachorroMania</h1>
+        <p>Explorando o Mundo Canino</p>
     </header>
 
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#racas">Raças</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
+    <section id="inicio">
+        <h2>Bem-vindo ao CachorroMania</h2>
+        <p>Descubra o fascinante mundo dos cachorros, desde raças populares até cuidados e curiosidades.</p>
+    </section>
 
-        <section id="inicio">
-            <h2>Bem-vindo ao Meu Site</h2>
-            <p>Este é um site de exemplo. Personalize conforme suas necessidades.</p>
-        </section>
+    <section id="racas">
+        <h2>Conheça as Raças</h2>
+        <!-- Lista de raças com informações -->
+    </section>
 
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Um breve resumo sobre você e suas habilidades.</p>
-        </section>
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="slick-carousel">
+            <img src="dog1.jpg" alt="Cachorro 1">
+            <img src="dog2.jpg" alt="Cachorro 2">
+            <img src="dog3.jpg" alt="Cachorro 3">
+            <!-- Adicione mais imagens conforme necessário -->
+        </div>
+    </section>
 
-        <section id="habilidades">
-            <h2>Habilidades</h2>
-            <p>Liste suas habilidades e tecnologias em que você é especialista.</p>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>React.js</li>
-                <li>Node.js</li>
-            </ul>
-        </section>
-
-        <section id="portfolio">
-            <h2>Meu Portfólio</h2>
-            <p>Mostre alguns dos seus projetos anteriores.</p>
-        </section>
-
-        <section id="contato">
-            <h2>Entre em Contato</h2>
-            <p>Deixe suas informações de contato.</p>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-        </section>
-
-    </div>
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <!-- Formulário de contato avançado -->
+    </section>
 
     <footer>
-        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+        <p>&copy; 2024 CachorroMania. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Adiciona funcionalidade ao botão de hambúrguer para mostrar/ocultar o menu em dispositivos menores
-        document.querySelector('nav ul').classList.toggle('active');
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
