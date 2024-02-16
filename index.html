@@ -7,8 +7,117 @@
     <link rel="icon" href="caminho-para-o-seu-icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Seus estilos CSS aqui */
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Comic Sans MS', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #ffb6c1;
+            color: #fff;
+            text-align: center;
+            padding: 2em;
+        }
+
+        nav {
+            background-color: #fec0fc;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff69b4;
+        }
+
+        footer {
+            background-color: #ffb6c1;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #ff69b4;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d4508d;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff69b4;
+            color: #fff;
+            padding: 10px 15px;
+            display: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -19,44 +128,79 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#racas">Raças</a></li>
-            <li><a href="#galeria">Galeria</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#racas">Raças</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="inicio">
-        <h2>Bem-vindo ao CachorroMania</h2>
-        <p>Descubra o fascinante mundo dos cachorros, desde raças populares até cuidados e curiosidades.</p>
-    </section>
+    <div class="container">
 
-    <section id="racas">
-        <h2>Conheça as Raças</h2>
-        <!-- Lista de raças com informações -->
-    </section>
+        <section id="inicio">
+            <h2>Bem-vindo ao CachorroMania</h2>
+            <p>Descubra o fascinante mundo dos cachorros, desde raças populares até cuidados e curiosidades.</p>
+        </section>
 
-    <section id="galeria">
-        <h2>Galeria de Fotos</h2>
-        <div class="slick-carousel">
-            <img src="dog1.jpg" alt="Cachorro 1">
-            <img src="dog2.jpg" alt="Cachorro 2">
-            <img src="dog3.jpg" alt="Cachorro 3">
-            <!-- Adicione mais imagens conforme necessário -->
-        </div>
-    </section>
+        <section id="racas">
+            <h2>Conheça as Raças</h2>
+            <!-- Lista de raças com informações -->
+        </section>
 
-    <section id="contato">
-        <h2>Entre em Contato</h2>
-        <!-- Formulário de contato avançado -->
-    </section>
+        <section id="galeria">
+            <h2>Galeria de Fotos</h2>
+            <div class="slick-carousel">
+                <img src="dog1.jpg" alt="Cachorro 1">
+                <img src="dog2.jpg" alt="Cachorro 2">
+                <img src="dog3.jpg" alt="Cachorro 3">
+                <!-- Adicione mais imagens conforme necessário -->
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form id="contact-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </div>
 
     <footer>
         <p>&copy; 2024 CachorroMania. Todos os direitos reservados.</p>
     </footer>
 
+    <div id="back-to-top" onclick="scrollToTop()">Voltar ao Topo</div>
+
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        // Adicionar funcionalidade de voltar ao topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Adicionar exibição/desativação do botão "Voltar ao Topo"
+        window.addEventListener('scroll', function() {
+            var backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 200) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
