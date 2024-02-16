@@ -1,74 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site Profissional</title>
+    <link rel="icon" href="caminho-para-o-seu-icone.ico" type="image/x-icon">
     <style>
-        /* Estilos CSS aqui, conforme necessário */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2em;
+        }
+
+        nav {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        form {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            nav.active ul {
+                display: flex;
+                justify-content: center;
+            }
+        }
     </style>
-    <title>Sua Loja</title>
 </head>
 <body>
+
     <header>
-        <h1>Sua Loja Online</h1>
+        <h1>Seu Nome</h1>
+        <p>Desenvolvedor Web</p>
     </header>
-    <main>
-        <section class="product" id="product1">
-            <img src="product1.jpg" alt="Product 1">
-            <h2>Produto 1</h2>
-            <p>Descrição do Produto 1.</p>
-            <p class="price">R$ 50,00</p>
-            <button onclick="addToCart('Produto 1', 50.00)">Add to Cart</button>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <section id="inicio">
+            <h2>Bem-vindo ao Meu Site</h2>
+            <p>Este é um site de exemplo. Personalize conforme suas necessidades.</p>
         </section>
 
-        <section class="product" id="product2">
-            <img src="product2.jpg" alt="Product 2">
-            <h2>Produto 2</h2>
-            <p>Descrição do Produto 2.</p>
-            <p class="price">R$ 75,00</p>
-            <button onclick="addToCart('Produto 2', 75.00)">Add to Cart</button>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Um breve resumo sobre você e suas habilidades.</p>
         </section>
 
-        <!-- Adicione mais produtos conforme necessário -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <p>Liste suas habilidades e tecnologias em que você é especialista.</p>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Node.js</li>
+            </ul>
+        </section>
 
-    </main>
-    <aside id="cart">
-        <h2>Carrinho de Compras</h2>
-        <ul id="cart-items"></ul>
-        <p>Total: <span id="cart-total">R$ 0,00</span></p>
-    </aside>
+        <section id="portfolio">
+            <h2>Meu Portfólio</h2>
+            <p>Mostre alguns dos seus projetos anteriores.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Deixe suas informações de contato.</p>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </div>
+
     <footer>
-        <p>&copy; 2024 Sua Loja Online. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        let cartItems = [];
-        let cartTotal = 0;
-
-        function addToCart(productName, productPrice) {
-            cartItems.push({ name: productName, price: productPrice });
-            cartTotal += productPrice;
-
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartItemsElement = document.getElementById('cart-items');
-            const cartTotalElement = document.getElementById('cart-total');
-
-            // Limpa a lista de itens do carrinho
-            cartItemsElement.innerHTML = '';
-
-            // Adiciona os itens ao carrinho
-            cartItems.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
-                cartItemsElement.appendChild(listItem);
-            });
-
-            // Atualiza o total do carrinho
-            cartTotalElement.textContent = `R$ ${cartTotal.toFixed(2)}`;
-        }
+        // Adiciona funcionalidade ao botão de hambúrguer para mostrar/ocultar o menu em dispositivos menores
+        document.querySelector('nav ul').classList.toggle('active');
     </script>
+
 </body>
 </html>
