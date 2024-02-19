@@ -9,91 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Seus estilos CSS aqui */
-        body {
-            scroll-behavior: smooth;
-            font-family: 'Comic Sans MS', cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-
-        header {
-            background-color: #b2dfdb; /* Verde Pastel */
-            color: #fff;
-            text-align: center;
-            padding: 2em;
-        }
-
-        nav {
-            background-color: #a5d6a7; /* Verde Pastel */
-            color: #fff;
-            padding: 1em;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px 0;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #4caf50; /* Verde */
-        }
-
-        footer {
-            background-color: #b2dfdb; /* Verde Pastel */
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0;
-            color: #4caf50; /* Verde */
-        }
-
-        button {
-            background-color: #4caf50; /* Verde */
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #388e3c; /* Verde mais escuro */
-        }
-
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4caf50; /* Verde */
-            color: #fff;
-            padding: 10px 15px;
-            display: none;
-            cursor: pointer;
-        }
-        .slick-carousel {
-    max-width: 800px; /* Ajuste o valor conforme necessário */
-    margin: 0 auto; /* Centralizar as imagens na tela */
-}
-
-        .slick-carousel img {
-    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 8px; /* Adiciona borda arredondada para um visual mais amigável */
-}
-
+        /* ... (existing styles) ... */
     </style>
 </head>
 <body>
@@ -138,7 +54,7 @@
 
         <section id="contato">
             <h2>Entre em Contato</h2>
-            <form id="contact-form">
+            <form id="contact-form" action="processar_formulario.php" method="post">
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -148,14 +64,14 @@
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
 
-                <button type="submit">Enviar Mensagem</button>
+                <button type="submit" onclick="submitForm()">Enviar Mensagem</button>
             </form>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2024 CachorroMania. Todos os direitos reservados.</p>
+        <p>&copy; <?php echo date("Y"); ?> CachorroMania. Todos os direitos reservados.</p>
     </footer>
 
     <div id="back-to-top" onclick="scrollToTop()">Voltar ao Topo</div>
@@ -163,12 +79,10 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="scripts.js"></script>
     <script>
-        // Adicionar funcionalidade de voltar ao topo
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Adicionar exibição/desativação do botão "Voltar ao Topo"
         window.addEventListener('scroll', function() {
             var backToTopButton = document.getElementById('back-to-top');
             if (window.scrollY > 200) {
@@ -177,6 +91,11 @@
                 backToTopButton.style.display = 'none';
             }
         });
+
+        function submitForm() {
+            alert("Formulário enviado com sucesso!"); // Adicione aqui a lógica de envio ou utilize AJAX para processamento assíncrono.
+        }
     </script>
 </body>
 </html>
+
